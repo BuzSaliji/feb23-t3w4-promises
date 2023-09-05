@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Super Cool Clock</h1>
+    <h1 id="clockDisplay"></h1>
+
+    <script>
+      let clockDisplayElement = document.getElementById("clockDisplay");
+
+      //setTimeout(() => {
+      //clockDisplayElement.innerText = new Date(Date.now()).toLocaleTimeString(
+      //"en-US",
+      //{ hour12: true }
+      //);
+      //}, 5000);
+      // As soon as the page loads
+      clockDisplayElement.innerText = new Date(Date.now()).toLocaleTimeString(
+        "en-US",
+        { hour12: true }
+      );
+
+      // every second after that
+      setInterval(() => {
+        clockDisplayElement.innerText = new Date(Date.now()).toLocaleTimeString(
+          "en-US",
+          { hour12: true }
+        );
+      }, 1000);
+      // asynchronus code - doesn't stop the clock
+      console.log("Log happens immediately");
+
+      // clockDisplayElement.innerText = Date.now();
+    </script>
+  </body>
+</html>
